@@ -12,7 +12,7 @@ from tqdm import tqdm
 # 画像リストcsvファイルの読み込み
 # csvファイルは「枝肉断面画像のパス」，「X座標の数値」，「Y座標の数値」を、
 # imgpath, x, y のカラム名で入力しておく。
-imglist = pd.read_csv('./File_name_of_Img_list.csv') # 読み込みファイル名を指定
+imglist = pd.read_csv('./File_name_of_Img_list.csv') 
 
 X = []
 Y = []
@@ -32,6 +32,6 @@ X = X.astype('float32')
 X = X / 255.0
 
 # 
-np.save('./File_name_for_Img_data.npy', X) # 画像データファイル名を指定
-np.save('./File_name_for_label_data.npy', Y) # 座標データファイル名を指定
+np.save('./File_name_for_Img_data.npy', X) # 学習用画像データファイル名を指定
+np.save('./File_name_for_label_data.npy', Y) # 学習用座標データファイル名を指定
 
