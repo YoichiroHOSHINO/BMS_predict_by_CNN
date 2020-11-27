@@ -26,7 +26,7 @@ model = load_model('./weights/model_loincenter_train.hdf5')
 
 print ('予測用画像を読み込みます')
 # 予測する画像データセットのパスを指定してください。
-P = np.load('./gifu_H19-H25_loincenter_withdata_img.npy')
+P = np.load('./File_name_of_Img_data_for_predict.npy')
 
 print ('予測用画像を変換します')
 P = P.reshape(P.shape[0], 250, 350,1)
