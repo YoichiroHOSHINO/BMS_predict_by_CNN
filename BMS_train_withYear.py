@@ -36,7 +36,10 @@ Y_train = np_utils.to_categorical(Y_train, 11)
 Y_test = Y_test - 2
 Y_test = np_utils.to_categorical(Y_test, 11)
 
-# 出荷年をカテゴリカルデータに変換する。17-25を0-8の9カテゴリにする。
+# 出荷年のカテゴリカルデータ化
+# 一番古い出荷年が0になるように"17"の数値を調整してください。
+# また、一番新しい出荷年－一番古い出荷年＋1になるように"9"を調整してください。
+# 例：17-25を0-8の9カテゴリにする。
 Year_train = Year_train - 17
 Year_train = np_utils.to_categorical(Year_train, 9)
 Year_train = np.expand_dims(Year_train, axis=-1)

@@ -30,6 +30,6 @@ X_test = np.expand_dims(X_test, axis=-1)
 pred = model.predict(X_test, batch_size = 64, verbose=1)
 
 # weightsフォルダに予測結果が保存されます。
-np.savetxt('./weights/pred_compare/pred_' + testname + '.csv', pred, delimiter=',')
+np.savetxt('./weights/pred_' + testname + '.csv', pred, delimiter=',')
 
 #%%

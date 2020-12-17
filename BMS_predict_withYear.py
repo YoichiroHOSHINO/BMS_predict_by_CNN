@@ -22,7 +22,7 @@ P = np.load('./loin_img_test.npy')
 # 予測する出荷年データセットのパスを指定してください。
 Year = np.load('./loin_year_test.npy')
 
-# 予測するBMSデータセット（未知の場合は仮入力で作成）のパスを指定してください。
+# 予測するラベル（BMS）データセット（未知の場合は仮入力で作成）のパスを指定してください。
 Y = np.load('./loin_label_test.npy')
 
 # 任意の試験名を指定してください。
@@ -49,6 +49,9 @@ model = load_model('./weights/model_BMS_train_withYear.hdf5')
 # 予測
 P = np.expand_dims(P, axis=-1)
 
+# 出荷年のカテゴリカルデータ化
+# 一番古い出荷年が0になるように"17"の数値を調整してください。
+# また、一番新しい出荷年－一番古い出荷年＋1になるように"9"を調整してください。
 Year = Year - 17
 Year = np_utils.to_categorical(Year, 9)
 Year = np.expand_dims(Year, axis=-1)
