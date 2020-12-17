@@ -51,6 +51,11 @@ X_train = X_train / 255.0
 X_test = X_test.astype('float32')
 X_test = X_test / 255.0
 
+# 訓練群（_train.npy）と検証群（_test.npy）それぞれ、
+# 画像データセット（_img）、
+# 出荷年データセット（_year）、
+# ラベル（BMS）データセット（_label）が出力されます。
+# 変更する場合は下記ファイル名を変更してください。
 np.save('./loin_img_train.npy', X_train)
 np.save('./loin_year_train.npy', X2_train)
 np.save('./loin_label_train.npy', Y_train)
