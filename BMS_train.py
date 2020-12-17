@@ -83,7 +83,7 @@ pd.DataFrame(history.history).to_csv('./weights/histry_' + testname + '.csv')
 # 評価 & 評価結果を逐次出力
 print(model.evaluate(X_test, Y_test))
 
-# 予測
+# 予測する画像データセットを指定してください。
 print ('予測用画像を読み込みます')
 P = np.load('./loin_img_test.npy')
 
